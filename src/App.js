@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
-import FormInput from './formInput.jsx';
+import FormInput from './FormInput.jsx';
+import './index.css'
 function App() {
   const [values,setValues]=useState({
     "first name":"",
@@ -97,7 +98,7 @@ const onChange=()=>{
      <div className='form-app'>
          <form onSubmit={handleSubmit}>
                {inputs.map((input)=>{
-                <FormInput key={input.id} {...input} onChange={onChange} value={values[input.name]}/>
+                <FormInput key={input.id}  {...input} onChange={onChange} value={values[input.name]}/>
                })}
                <button>Submit</button>
          </form>
