@@ -84,10 +84,24 @@ const inputs = [
    "placeholder":"Confirm Password",
    "error message":''
 }
-
 ]
+
+const handleSubmit=(e)=>{
+   e.preventDefault()
+}
+
+const onChange=()=>{
+  setValues({...values,[e.target.name]:e.target.value})
+}
   return (
-     null
+     <div className='form-app'>
+         <form onSubmit={handleSubmit}>
+               {inputs.map((input)=>{
+                <FormInput key={input.id} {...input} onChange={onChange} value={values[input.name]}/>
+               })}
+               <button>Submit</button>
+         </form>
+     </div>
   );
 }
 
